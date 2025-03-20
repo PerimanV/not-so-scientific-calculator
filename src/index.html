@@ -141,7 +141,10 @@
 
             function evaluateRes() {
                 console.log('currentValue:', currentValue);
-                const convertedVal = currentValue.replace("×","*");
+                const convertedVal = currentValue
+                .replace("×","*")
+                .replace("÷","/")
+                .replace("%","*0.01")
                 const result = eval(convertedVal);
                 currentValue = result.toString();
                 display.value = currentValue;
